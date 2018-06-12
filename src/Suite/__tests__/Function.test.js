@@ -10,7 +10,15 @@ describe('Function', () => {
   });
 
   it('does not accept empty specimen definition', () => {
-    const _it = jest.fn();
     expect(() => Function((_: Specimen) => ({}))).toThrow('Undefined specimen');
+  });
+
+  it('throws error if specimen is not a function', () => {
+    const _it = jest.fn();
+    expect(() =>
+      Function((_: Specimen) => ({
+        [_(_it)]: 'foo',
+      })),
+    ).toThrow('Specimen is not a function');
   });
 });

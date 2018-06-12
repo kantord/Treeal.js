@@ -6,9 +6,15 @@ const Function = (
   specimenDefintion: SpecimenDefinition,
   ...experiments: Array<ExperimentDefinition>
 ) => {
-  const specimen = specimenDefintion(() => '__specimen__')
+  const environment = null;
+  const wrapItFunction = _it => {
+    return '__specimen__';
+  };
+  const compiledSpecimen = specimenDefintion(wrapItFunction);
 
-  if (!specimen.__specimen__) throw new Error('Undefined specimen')
+  if (!compiledSpecimen.__specimen__) throw new Error('Undefined specimen');
+  if (typeof compiledSpecimen.__specimen__ !== 'function')
+    throw new Error('Specimen is not a function');
 };
 
-export default Function
+export default Function;
