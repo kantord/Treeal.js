@@ -6,16 +6,21 @@
   "author": "Daniel Kantor <git@daniel-kantor.com>",
   "license": "Apache 2.0",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "eslint": "eslint src"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-flow": "^6.23.0",
     "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-flowtype": "^2.49.3",
+    "eslint-plugin-jest": "^21.17.0",
     "flow-bin": "^0.74.0",
     "jest-cli": "^23.1.0",
     "require": "^2.4.20"
